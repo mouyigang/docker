@@ -1,6 +1,9 @@
 FROM java:8-jdk
 
-RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget git curl zip lxc&& rm -rf /var/lib/apt/lists/*
+
+#Install docker
+RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
