@@ -2,6 +2,8 @@
 
 set -e
 
+#make sure jenkins can run docker command
+sudo groupmod -g $(stat -c "%g" /var/run/docker.sock) jenkins
 # Copy files from /usr/share/jenkins/ref into /var/jenkins_home
 # So the initial JENKINS-HOME is set with expected content. 
 # Don't override, as this is just a reference setup, and use from UI 
