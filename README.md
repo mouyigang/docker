@@ -1,5 +1,11 @@
 Docker image for Jenins in docker with access to host's docker
 =======================
+Some notes:
+
+1. Installed docker so that all dynamic dependencies will be installed.
+2. Add sudo and make jenkins be able to executed sudo without password.
+3. Add user jenkins to docker's group(the docker.sock's group, not the docker group inside jenkins container)
+
 docker-compose.yml
 
 	  jenkins:
